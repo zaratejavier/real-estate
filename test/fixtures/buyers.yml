@@ -6,7 +6,7 @@ one:
   email: MyString
   max_price: 1.5
   cities: MyText
-  agent: 
+  agent: one
 
 two:
   first_name: MyString
@@ -14,4 +14,4 @@ two:
   email: MyString
   max_price: 1.5
   cities: MyText
-  agent: 
+  agent: two

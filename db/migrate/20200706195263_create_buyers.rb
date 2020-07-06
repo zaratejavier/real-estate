@@ -6,7 +6,7 @@ class CreateBuyers < ActiveRecord::Migration[6.0]
       t.string :email
       t.float :max_price
       t.text :cities
-      t.belong_to :agent
+      t.belongs_to :agent, null: false, foreign_key: true
 
       t.timestamps
     end
