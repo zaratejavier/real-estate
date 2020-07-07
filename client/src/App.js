@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Container } from "semantic-ui-react";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/NavBar";
 import { Switch, Route } from "react-router-dom";
 
 function App() {
