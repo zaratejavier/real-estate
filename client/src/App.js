@@ -3,6 +3,7 @@ import "./App.css";
 import { Container } from "semantic-ui-react";
 import Navbar from "./Components/NavBar";
 import { Switch, Route } from "react-router-dom";
+import Available from "./Screens/Available/Available";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Container>
         <Switch>
           <Route exact path="/" component={() => <h1>Home</h1>} />
+          <Route exact path="/available" component={Available} />
           <Route exact path="/city_cost" component={() => <h1>city_cost</h1>} />
           {/* 
           <Route exact path="/available" component={Available} />
