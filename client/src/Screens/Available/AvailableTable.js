@@ -1,8 +1,7 @@
-import React from "react"
+import React from "react";
 import { Table } from "semantic-ui-react";
 
 export default function AvailableTable({ properties }) {
-
   return (
     <Table celled>
       <Table.Header>
