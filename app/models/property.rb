@@ -15,4 +15,9 @@ class Property < ApplicationRecord
       .where("properties.sold <> TRUE")
       .order("a.id")
   end
+
+  # SELECT price, beds,baths, sq_ft, street
+  # FROM properties
+  # INNER JOIN addresses a ON a.property_id = properties.id
+  # WHERE (a.city) = 'Draper' AND properties.sold <> true 
 end
