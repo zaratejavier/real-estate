@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Form } from "semantic-ui-react";
+import { Form, List } from "semantic-ui-react";
 import axios from "axios";
 
 export default function (props) {
   const [agents, setAgents] = useState([]);
   const [buyers, setBuyers] = useState([]);
+  const [properties, setProperties] = useState([]);
+
   const [showBuyers, setShowBuyers] = useState(false);
 
   async function getAgents() {
@@ -23,7 +25,7 @@ export default function (props) {
       setShowBuyers(true);
     }
   }
-  
+
   useEffect(() => {
     getAgents();
   }, []);
@@ -58,8 +60,32 @@ export default function (props) {
     }
   }
 
-  function getBuyersList(e, { value }) {
+  async function getBuyersList(e, { value }) {
     console.log(value);
+    const buyerId = value
+    try {
+      const res = await axios.get(`/api/xbuyers_list/${buyerId}`)
+      setProperties(res.data) // this might not be res.data need to check
+    } catch(e){
+      setProperties([
+        { sq_ft: 12334, city: 'Sandy', price: 12344.00 },
+        { sq_ft: 567334, city: 'Draper', price: 17944.00 },
+        
+      ])
+    }
+  }
+
+  const getProperties = () => {
+    return properties.map(p => {
+      return (
+        <List key={p.id}>
+          <List.Content>
+            <List.Header>${p.price} - Square feet: {p.sq_ft}</List.Header>
+            <List.Header>{p.city}</List.Header>
+          </List.Content>
+        </List>
+      )
+    })
   }
 
   return (
@@ -69,6 +95,7 @@ export default function (props) {
       {showBuyers && (
         <Form.Select options={getBuyersOptions()} onChange={getBuyersList} />
       )}
+      {properties.length > 0 && getProperties()}
     </div>
   );
 }
