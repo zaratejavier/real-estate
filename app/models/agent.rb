@@ -17,4 +17,13 @@ class Agent < ApplicationRecord
       .group('agents.id, sold')
       .order ('COUNT(*) DESC')
   end
+
+
+# #   SELECT id first_name, last_name, agent_id
+# # from buyers
+
+#   def self.buyers
+#     select('id, first_name, last_name, agent_id')
+#     .from("buyers")
+#   end
 end
