@@ -63,7 +63,7 @@ export default function (props) {
     console.log(value);
     const buyerId = value
     try {
-      const res = await axios.get(`/api/xbuyers_list/${buyerId}`)
+      const res = await axios.get(`/api/buyers/${buyerId}`)
       setProperties(res.data) // this might not be res.data need to check
     } catch(e){
       setProperties([

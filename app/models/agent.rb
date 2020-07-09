@@ -26,4 +26,6 @@ class Agent < ApplicationRecord
 #     select('id, first_name, last_name, agent_id')
 #     .from("buyers")
 #   end
+
+
 end

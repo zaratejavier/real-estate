@@ -1,6 +1,6 @@
 class Api::AgentsController < ApplicationController
   def index
-    render json: Agent.unsold_home 
+    render json: Agent.unsold_home
   end
 
   def show
