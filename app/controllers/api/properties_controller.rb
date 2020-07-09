@@ -8,4 +8,10 @@ class Api::PropertiesController < ApplicationController
     render json: Property.by_city(params[:city])
     # render json: Property.all
   end
+
+  # def dcity
+  #   render json: Property.Distinct_city
+  # end
+
+
 end

@@ -5,6 +5,7 @@ import Navbar from "./Components/NavBar";
 import { Switch, Route } from "react-router-dom";
 import Available from "./Screens/Available/Available";
 import Cities from "./Screens/Cities/Cities";
+import FindHome from "./Screens/FindHome/FindHome";
 
 function App() {
   return (
@@ -16,10 +17,11 @@ function App() {
           <Route exact path="/available" component={Available} />
           <Route exact path="/cities" component={Cities} />
           <Route exact path="/city_cost" component={() => <h1>city_cost</h1>} />
-          {/* 
-          <Route exact path="/available" component={Available} />
+          <Route exact path="/find_home" component={FindHome} /> 
+   
+          {/* <Route exact path="/available" component={Available} /> */}
           
-          <Route exact path="/find_home" component={FindHome} /> */}
+          
         </Switch>
       </Container>
     </>

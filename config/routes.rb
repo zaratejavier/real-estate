@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     get 'properties', to: 'properties#index'
     get "cities/:city", to: "properties#city"
+    # get "dcities/:dcity", to: "properties#dcity"
+
   end
 end

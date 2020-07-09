@@ -26,4 +26,11 @@ class Property < ApplicationRecord
       .joins("INNER JOIN addresses a ON a.property_id = properties.id")
       .where("LOWER(a.city) = ? AND properties.sold <> true", city.downcase)
   end
+
+  # SELECT DISTINCT city from addresses
+
+  # def self.Distinct_city
+  #   select("DISTINCT city")
+  #   from("addresses")
+  # end
 end
