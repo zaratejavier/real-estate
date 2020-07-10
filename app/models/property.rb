@@ -29,12 +29,12 @@ class Property < ApplicationRecord
 
   
 
-  # SELECT DISTINCT city from addresses
 
-  # def self.Distinct_city
-  #   select("DISTINCT city")
-  #   from("addresses")
-  # end
+
+  def self.Distinct_city
+    select("DISTINCT city")
+    from("addresses")
+  end
 
 
 

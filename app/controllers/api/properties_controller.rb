@@ -13,9 +13,10 @@ class Api::PropertiesController < ApplicationController
     # render json: Property.all
   end
 
-  # def dcity
-  #   render json: Address.distinct_city
-  # end
+   def distinct_cities
+    render json: Address.distinct_city
+    # render json: Property.all
+  end
 
     def cost_by_city
    render json: Property.city_cost
