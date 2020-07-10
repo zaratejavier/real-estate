@@ -6,6 +6,7 @@ import { Switch, Route } from "react-router-dom";
 import Available from "./Screens/Available/Available";
 import Cities from "./Screens/Cities/Cities";
 import FindHome from "./Screens/FindHome/FindHome";
+import CityCost from "./Screens/CItyCost/CityCost";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Route exact path="/" component={() => <h1>Home</h1>} />
           <Route exact path="/available" component={Available} />
           <Route exact path="/cities" component={Cities} />
-          <Route exact path="/city_cost" component={() => <h1>city_cost</h1>} />
+          <Route exact path="/city_cost" component={CityCost} />
           <Route exact path="/find_home" component={FindHome} /> 
    
           {/* <Route exact path="/available" component={Available} /> */}
