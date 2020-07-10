@@ -27,10 +27,28 @@ class Property < ApplicationRecord
       .where("LOWER(a.city) = ? AND properties.sold <> true", city.downcase)
   end
 
+  
+
   # SELECT DISTINCT city from addresses
 
   # def self.Distinct_city
   #   select("DISTINCT city")
   #   from("addresses")
   # end
+
+
+
+#   select DISTINCT city, STRING_AGG(CAST(price AS varchar), ',' ORDER by price DESC ) AS prices, COUNT(*) price
+# from addresses
+# INNER JOIN properties p ON addresses.property_id = p.id
+# WHERE (p.sold IS true)
+# GROUP BY city
+
+def self.city_cost
+  select("DISTINCT city, STRING_AGG(CAST(price AS varchar), ',' ORDER BY price DESC ) AS prices, COUNT(*) price")
+  .from('addresses')
+  .joins("INNER JOIN properties p ON addresses.property_id = p.id")
+  .where("p.sold IS true")
+  .group("city")
+end
 end

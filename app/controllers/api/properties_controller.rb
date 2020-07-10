@@ -17,6 +17,12 @@ class Api::PropertiesController < ApplicationController
   #   render json: Address.distinct_city
   # end
 
+    def cost_by_city
+   render json: Property.city_cost
+  end
+
+
+
   private
 
   def set_page
