@@ -51,4 +51,5 @@ def self.city_cost
   .where("p.sold IS true")
   .group("city")
 end
+
 end
