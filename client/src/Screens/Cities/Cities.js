@@ -2,7 +2,18 @@ import React from "react";
 import { Form, TableHeader, TableBody, Table } from "semantic-ui-react";
 import Axios from "axios";
 
-const cities = ["draper", "sandy", "SLC"];
+const cities = [
+  'Sandy',
+  'Draper',
+  'SLC',
+  'Orem',
+  'Provo',
+  'Ogden',
+  'Layton',
+  'Midvale',
+  'Murray'
+];
+
 const options = cities.map((c) => {
   return { key: c, text: c, value: c };
 });
