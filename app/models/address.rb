@@ -1,7 +1,7 @@
 class Address < ApplicationRecord
   belongs_to :property
 
-  def seld.distinct_city
+  def self.distinct_city
     select("DISTINCT city")
   end
 end
